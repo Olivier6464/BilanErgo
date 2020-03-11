@@ -19,6 +19,16 @@
     />
     <title>bilan ERGO</title>
     <style>
+      :root {
+        --main-bg-color: rgb(187, 235, 178);
+        --main-label-color: rgb(236, 206, 150);
+        --main-menu-over: rgb(236, 235, 147);
+        --bg-color-suiviErgo: #39e9e0;
+        --main-options-over: rgb(156, 214, 195);
+        --options-color: black;
+        --temps-color: rgb(238, 104, 26);
+      }
+
       * {
         padding: 0;
         margin: 0;
@@ -32,22 +42,16 @@
 
       body {
         font-family: "Roboto", sans-serif;
-        color: #444;
         cursor: black;
       }
 
       li:hover {
         cursor: pointer;
-        background-color: rgb(236, 235, 147);
+        background-color: var(--main-menu-over);
       }
 
       p {
         font-family: "Times New Roman", Times;
-      }
-
-      h1 {
-        font-family: "Times New Roman", Times;
-        background-color: #80ced6;
       }
 
       span {
@@ -63,12 +67,12 @@
       }
 
       option:hover {
-        background: rgb(156, 214, 195);
-        color: black;
+        background: var(--main-options-over);
+        color: var(--options-color);
       }
 
       #temps {
-        color: rgb(238, 104, 26);
+        color: var(--temps-color);
       }
 
       textarea,
@@ -97,12 +101,12 @@
 
       body {
         border-color: rgb(236, 206, 150);
-        background-color: rgb(187, 235, 178);
+        background-color: var(--main-bg-color);
       }
 
       nav {
         font-family: "Contrail One", cursive;
-        background-color: rgb(187, 235, 178);
+        background-color: var(--main-bg-color);
         padding: 10px 0px;
         text-align: center;
         position: absolute;
@@ -137,19 +141,19 @@
       .dolor {
         padding: 10px;
         border-radius: 5px 5px 0 0;
-        background-color: #rgb(236, 206, 150);
+        background-color: var(--main-label-color);
       }
 
       .donnees {
         padding: 10px;
         border-radius: 5px 5px 0 0;
-        background-color: #39e9e0;
+        background-color: var(--bg-color-suiviErgo);
       }
 
       .titi {
         padding: 10px;
         border-radius: 5px 5px 0 0;
-        background-color: rgb(236, 206, 150);
+        background-color: var(--main-label-color);
       }
     </style>
   </head>

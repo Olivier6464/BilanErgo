@@ -55,224 +55,98 @@ window.onload = function() {
   });
 };
 
-function affichage() {
-  var bil = "";
-  var esp = " ";
-  var rtl = "\n";
-  var fois = "*";
-  var moins = "-";
-  var plus = "+";
-  var egal = "=";
-  var nom = document.getElementById("nom").value;
-  var prenom = document.getElementById("prenom").value;
-  /* les chaines les plus longues de chaque rubrique expl: fonctionnelle */
-  var marche = "Marche (périmètre, aides techniques ...): ";
-  var lplfonc = marche.length;
-  var assis = "Équilibre assis: ";
-  var debout = "Équilibre debout: ";
-  var transferts = "Transferts (lit vers fauteuil): ";
-  var doubletache = "Double tâche: ";
-  var oedeme = "Oedème: ";
-  var hematome = "Hématome: ";
-  var inflamation = "Inflammation: ";
-  var amyotrophie = "Amyotrophie: ";
-  var lpltroph = inflamation.length;
-  var mobilisation = "A la mobilisation: ";
-  var repos = "Au repos:";
-  var lpldoul = mobilisation.length;
-  var douleurRepos = parseInt(
-    document.getElementById("douleurRepos").value,
-    10
-  );
-  var douleurMob = parseInt(document.getElementById("douleurMob").value, 10);
+    function affichage() {
+        var bil = "";
+        var esp = " ";
+        var rtl = "\n";
+        var fois = "*";
+        var moins = "-";
+        var plus = "+";
+        var egal = "=";
+        var mobilisation = "A la mobilisation: ";
+        var repos = "Au repos:";
+        var lpldoul = mobilisation.length;
 
-  //bil += spacer.box("Bilan Kinésithérapique",fois);
-  bil +=
-    document.getElementById("civilite").value +
-    esp +
-    nom.charAt(0).toUpperCase() +
-    nom.substring(1).toLowerCase() +
-    esp +
-    prenom.charAt(0).toUpperCase() +
-    prenom.substring(1).toLowerCase();
-  bil +=
-    rtl +
-    "Date de l'admission: " +
-    frenchdate(document.getElementById("entree").value);
-  if (document.getElementById("anamnese").value !== "") {
-    bil += rtl + spacer.box("ANAMNÈSE", egal);
-    bil += rtl + document.getElementById("anamnese").value;
-  }
+        //bil += spacer.box("Bilan Kinésithérapique",fois);
 
-  if (document.getElementById("histoire").value !== "") {
-    bil += rtl + spacer.box("HISTOIRE DE LA MALADIE", egal);
-    bil += rtl + document.getElementById("histoire").value;
-  }
-  if (document.getElementById("atcd").value !== "") {
-    bil += rtl + spacer.box("Antécédents", egal);
-    bil += rtl + document.getElementById("atcd").value;
-  }
-  if (document.getElementById("atcdChir").value !== "") {
-    bil += rtl + spacer.box(" Antécédents Chirurgicaux", egal);
-    bil += rtl + document.getElementById("atcdChir").value;
-  }
-  if (document.getElementById("modeDeVie").value !== "") {
-    bil += rtl + spacer.box(" Mode de vie", egal);
-    bil += rtl + document.getElementById("modeDeVie").value;
-  }
-  if (document.getElementById("operation").value !== "") {
-    bil +=
-      rtl +
-      rtl +
-      "Date de l'opération: " +
-      frenchdate(document.getElementById("operation").value);
-  }
-  if (document.getElementById("appui").value !== "") {
-    bil +=
-      rtl +
-      "Appui ( total/limité/sans appui ): " +
-      document.getElementById("appui").value;
-  }
-  if (document.getElementById("immobilisation").value !== "") {
-    bil +=
-      rtl +
-      "Immobilisation (plâtre/attelle...): " +
-      document.getElementById("immobilisation").value;
-  }
-  bil += rtl + spacer.box(" Cotation de la Douleur EVS", egal);
-  bil += rtl + "Échelle de 0 à 4.";
-  bil +=
-    rtl +
-    " 0 = pas de douleur, 1 = faible, 2 = moyenne, 3 = forte, 4 = très forte." +
-    rtl;
-  bil +=
-    rtl +
-    repos +
-    spacer.line(lpldoul - repos.length + 3, ".") +
-    " " +
-    document.getElementById("douleurRepos").value +
-    "/4";
-  bil +=
-    rtl +
-    mobilisation +
-    " " +
-    document.getElementById("douleurMob").value +
-    "/4";
-  bil +=
-    rtl +
-    "Type: " +
-    getSelectionsListe("typeDouleur") +
-    document.getElementById("typeRepos").value;
-  bil += rtl + "Localisation: " + document.getElementById("localisation").value;
-  bil += rtl + spacer.box("FONCTIONNEL", egal);
-  bil +=
-    rtl +
-    assis +
-    spacer.line(lplfonc - assis.length + 5, ".") +
-    " " +
-    document.getElementById("assis").value;
-  bil +=
-    rtl +
-    debout +
-    spacer.line(lplfonc - debout.length, ".") +
-    spacer.line(2, ".") +
-    " " +
-    document.getElementById("debout").value;
-  bil +=
-    rtl +
-    transferts +
-    spacer.line(lplfonc - transferts.length, ".") +
-    " " +
-    document.getElementById("transferts").value;
-  bil +=
-    rtl +
-    doubletache +
-    spacer.line(lplfonc - doubletache.length + 1, ".") +
-    spacer.line(3, ".") +
-    " " +
-    document.getElementById("doubleTache").value;
-  bil +=
-    rtl + rtl + "Autonomie AVJ: " + document.getElementById("autonomie").value;
-  bil += rtl + rtl + marche + document.getElementById("marche").value;
-  bil += rtl + spacer.box("TROPHICITÉ", egal);
-  bil +=
-    rtl +
-    oedeme +
-    spacer.line(lplfonc - oedeme.length + 4, ".") +
-    " " +
-    document.getElementById("oedeme").value;
-  bil +=
-    rtl +
-    hematome +
-    spacer.line(lplfonc - hematome.length, ".") +
-    spacer.line(2, ".") +
-    " " +
-    document.getElementById("hematome").value;
-  bil +=
-    rtl +
-    amyotrophie +
-    spacer.line(lplfonc - amyotrophie.length + 1, ".") +
-    " " +
-    document.getElementById("amyotrophie").value;
-  bil +=
-    rtl +
-    inflamation +
-    spacer.line(lplfonc - inflamation.length + 1, ".") +
-    " " +
-    document.getElementById("inflamation").value;
-  if (document.getElementById("attitudeVicieuse").value !== "") {
-    bil += rtl + spacer.box("ARTICULAIRE", egal);
-    bil +=
-      rtl +
-      "Attitude vicieuse: " +
-      document.getElementById("attitudeVicieuse").value;
-    bil += rtl + "Amplitude: " + document.getElementById("amplitude").value;
-  }
-  bil += rtl + spacer.box("MUSCULAIRE", egal);
-  bil +=
-    rtl +
-    "Verrouillage quadriceps: " +
-    document.getElementById("verrouillage").value;
-  bil +=
-    rtl +
-    rtl +
-    "Autres groupes musculaires: " +
-    document.getElementById("autres").value;
-  bil +=
-    rtl +
-    spacer.box(" Fonctions Supérieures", egal) +
-    rtl +
-    document.getElementById("fonctionsSuperieures").value;
-  bil +=
-    rtl +
-    spacer.box(" Fonctions Respiratoires", egal) +
-    rtl +
-    document.getElementById("fonctionsRespiratoires").value;
-  bil +=
-    rtl +
-    spacer.box(" Projet kiné du patient", egal) +
-    rtl +
-    document.getElementById("projetKine").value;
-  bil +=
-    rtl +
-    spacer.box(" Objectif de prise en charge du patient", egal) +
-    rtl +
-    document.getElementById("pec").value;
-  bil +=
-    rtl +
-    spacer.box(" Prise en charge prévisionnelle", egal) +
-    rtl +
-    document.getElementById("priseEnChargePrev").value;
-  $(".element-a-cacher").each(function() {
-    $(this).show();
-  });
-  var toCopy = document.getElementById("to-copy");
-  toCopy.value = "";
-  toCopy.value += "" + bil;
-  toCopy.select();
-  document.execCommand("copy");
-  return false;
-}
+        bil += rtl + spacer.box(" Cotation de la Douleur EVS", egal);
+        bil += rtl + "Échelle de 0 à 4.";
+        bil +=
+          rtl +
+          " 0 = pas de douleur, 1 = faible, 2 = moyenne, 3 = forte, 4 = très forte." +
+          rtl;
+        bil +=
+          rtl +
+          repos +
+          spacer.line(lpldoul - repos.length + 3, ".") +
+          " " +
+          document.getElementById("douleurRepos").value +
+          "/4";
+        bil +=
+          rtl +
+          mobilisation +
+          " " +
+          document.getElementById("douleurMob").value +
+          "/4";
+        bil +=
+          rtl +
+          "Type: " +
+          getSelectionsListe("typeDouleur") +
+          document.getElementById("typeRepos").value;
+        bil +=
+          rtl +
+          "Localisation: " +
+          document.getElementById("localisation").value;
+        bil += rtl + spacer.box("SITUATION", egal);
+        bil += rtl + document.getElementById("situation").value;
+        bil += rtl + spacer.box("Aides à domicile", egal);
+        bil += rtl + document.getElementById("aidesAdom").value;
+        bil += rtl + spacer.box("Accès extérieur logement", egal);
+        bil += rtl + document.getElementById("accesExtLogement").value;
+        bil += rtl + spacer.box("Accès intérieur logement", egal);
+        bil += rtl + document.getElementById("accesIntlogement").value;
+        bil += rtl + spacer.box("Déambulation intérieur", egal);
+        bil += rtl + document.getElementById("deambulationInt").value;
+        bil +=
+          rtl +
+          spacer.box("Déambulation extérieur avant l'hospitalisation", egal);
+        bil += rtl + document.getElementById("deambulationExt").value;
+        bil += rtl + spacer.box("CHAMBRE", egal);
+        bil += rtl + document.getElementById("chambre").value;
+        bil += rtl + spacer.box("HABILLAGE", egal);
+        bil += rtl + document.getElementById("habillage").value;
+        bil += rtl + spacer.box("SALLE DE BAINS", egal);
+        bil += rtl + document.getElementById("salleDeBain").value;
+        bil += rtl + spacer.box("TOILETTE", egal);
+        bil += rtl + document.getElementById("toilette").value;
+        bil += rtl + spacer.box("WC", egal);
+        bil += rtl + document.getElementById("wc").value;
+        bil += rtl + spacer.box("REPAS", egal);
+        bil += rtl + document.getElementById("repas").value;
+        bil += rtl + spacer.box("MENAGE", egal);
+        bil += rtl + document.getElementById("menage").value;
+        bil += rtl + spacer.box("ENTRETIEN DU LINGE", egal);
+        bil += rtl + document.getElementById("entretienDuLinge").value;
+        bil += rtl + spacer.box("COURSES", egal);
+        bil += rtl + document.getElementById("courses").value;
+        bil += rtl + spacer.box("CONDUITE AUTOMOBILE", egal);
+        bil += rtl + document.getElementById("conduiteAuto").value;
+        bil += rtl + spacer.box("ACTIVITES SIGNIFIANTES", egal);
+        bil += rtl + document.getElementById("activites").value;
+
+        $(".element-a-cacher").each(function() {
+          $(this).show();
+        });
+        var toCopy = document.getElementById("to-copy");
+        toCopy.value = "";
+        toCopy.value += "" + bil;
+        toCopy.select();
+        document.execCommand("copy");
+        return false;
+      }
+  
+
+
 
 function replaceSelection(idfield, idoption) {
   let d = document.getElementById(idoption);

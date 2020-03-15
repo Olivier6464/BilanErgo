@@ -3,7 +3,11 @@
   --main-label-color: #faeda1fa;
   --main-menu-over: rgb(236, 235, 147);
   --bg-color-suiviErgo: #39e9e0;
+<<<<<<< HEAD
   --main-options-over: rgb(214, 156, 197);
+=======
+  --main-options-over: rgb(156, 214, 195);
+>>>>>>> dev
   --options-color: rgb(15, 106, 241);
   --temps-color: rgb(26, 40, 238);
 }

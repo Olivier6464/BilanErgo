@@ -3,14 +3,9 @@
   --main-label-color: #faeda1fa;
   --main-menu-over: rgb(236, 235, 147);
   --bg-color-suiviErgo: #39e9e0;
-  --main-options-over: rgb(156, 214, 195);
-<<<<<<< HEAD
+  --main-options-over: rgb(214, 156, 197);
   --options-color: rgb(15, 106, 241);
-  --temps-color:rgb(26, 40, 238);
-=======
-  --options-color: rgb(14, 80, 179);
-  --temps-color: rgb(238, 104, 26);
->>>>>>> master
+  --temps-color: rgb(26, 40, 238);
 }
 
 * {

@@ -19,15 +19,19 @@
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" defer src="app.js"></script>
-    <title>bilan ERGO</title>
+    <title>
+      SUIVI ERGO
+    </title>
   </head>
 
   <body>
+    <div id="rubrique">
+      <span id="suivi-ergo-span">SUIVI ERGO...</span><span id="temps"></span>
+    </div>
     <div id="top"></div>
-
     <nav class="nav">
       <ul>
-        <li id="temps"></li>
+        <!-- <li id="temps"></!-->
         <li id="copier" onclick="affichage()">Copier</li>
         <!-- on affiche les numeros internes -->
         <li><a href="https://www.google.fr" target="_blank">Google</a></li>
@@ -35,14 +39,12 @@
         <li id="reinitialise">Réinitialiser</li>
       </ul>
     </nav>
-    <br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br />
 
     <div>
       <fieldset>
         <br /><br />
-        <legend align="center">
-          <span class="donnees"><strong>SUIVI ERGO</strong></span>
-        </legend>
+        <legend id="rubrique" align="center"></legend>
 
         <fieldset>
           <legend class="dolor" align="center">

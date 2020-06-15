@@ -88,15 +88,8 @@ window.onload = function() {
           " " +
           document.getElementById("douleurMob").value +
           "/4";
-        bil +=
-          rtl +
-          "Type: " +
-          getSelectionsListe("typeDouleur") +
-          document.getElementById("typeRepos").value;
-        bil +=
-          rtl +
-          "Localisation: " +
-          document.getElementById("localisation").value;
+        bil += rtl + spacer.box("INFO DOULEUR", egal);
+        bil += rtl + document.getElementById("infodouleur").value;
         bil += rtl + spacer.box("SITUATION", egal);
         bil += rtl + document.getElementById("situation").value;
         bil += rtl + spacer.box("Aides à domicile", egal);

@@ -69,32 +69,20 @@
             <option value="2">moyenne</option>
             <option value="3">forte</option>
             <option value="4">très forte</option> </select
-          ><br /><br /><label class="titi" for="caracteristique"
-            >Caractéristiques:</label
-          ><select multiple id="typeDouleur" name="typeDouleur">
-            <option value=""></option>
-            <option value="mécanique">Mécanique</option>
-            <option value="inflammatoire">inflammatoire</option>
-            <option value="élancements">Elancements</option>
-            <option value="pénétrante">Pénétrante</option>
-            <option value="décharges électriques">Décharges électriques</option>
-            <option value="coups de poignard">Coups de poignard</option>
-            <option value="en étau">En étau</option>
-            <option value="tiraillement">Tiraillement</option>
-            <option value="brûlure">Brûlure</option>
-            <option value="fourmillements">Fourmillements</option>
-            <option value="lourdeur">Lourdeur</option>
-            <option value="épuisante">Epuisante</option>
-            <option value="angoissante">Angoissante</option>
-            <option value="obsédante">Obsédante</option> </select
           ><br /><br />
-          <label class="titi" for="typeRepos">autre type</label
-          ><input id="typeRepos" name="typeRepos" type="text" /><br /><br />
-          <label class="titi" for="localisation">localisation </label
-          ><input id="localisation" name="localisation" type="text" /><br />
+          <label class="titi">INFO DOULEUR</label
+          ><textarea id="infodouleur" name="infodouleur" rows="2" cols="80"></textarea>
+        <select
+          open
+          id="phrinfodouleur"
+          onchange="replaceSelection('infodouleur',this.id)"
+          ;
+          onfocus="this.selectedIndex= 0;"
+        >
+          <option value="">phrases</option>
+          <option value="Lorem ipsum dolor sit.">Lorem ipsum dolor sit.</option>
+</select>
         </fieldset>
-        <br />
-        <hr />
         <br /><br />
 
         <label class="titi">SITUATION</label>
@@ -335,14 +323,8 @@
             >Aide d'une infirmière le matin déjà en place à domicile</option
           >
           <option
-            value="Actuellement aide de l'équipe soignante pour l'habillage du bas"
-            >Actuellement aide de l'équipe soignante pour l'habillage du
-            bas</option
-          >
-          <option
-            value="Actuellement aide de l'équipe soignante pour l'habillage complet"
-            >Actuellement aide de l'équipe soignante pour l'habillage
-            complet</option
+            value="Actuellement aide de l'équipe soignante pour la toilette"
+            >Actuellement aide de l'équipe soignante pour la toilette</option
           >
         </select>
       </fieldset>

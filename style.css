@@ -37,8 +37,6 @@ li:hover {
   color:var(--main-date-color);
 }
 
-
-
 span {
   margin-left: 30px;
 }
@@ -89,7 +87,7 @@ select {
 }
 
 fieldset {
-  font-family: "Kalam", cursive;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.4em;
   position: relative;
   padding: 15px 0;
@@ -101,7 +99,7 @@ legend {
 }
 
 nav {
-  font-family: "Contrail One", cursive;
+  font-family: cursive, Arial, Helvetica, sans-serif;
   /* background-color: var(--main-bg-color); */
   padding: 0px 0px;
   text-align: center;
@@ -127,13 +125,6 @@ nav a {
   font-size: 1.9em;
 }
 
-  
-  /* .douleur {
-    font-family: "Contrail One", cursive;
-    font-size: 1.0 em;
-    background-color: var(--main-lb-color);
-  }  */
-  
 .rubrique {
   color: #223083;
   padding: 16px;
@@ -141,13 +132,6 @@ nav a {
   border-radius: 5px 5px 0 0;
   background-color: var(--main-lb-color);
 }
-
-/* .dolor {
-  font-size: 1.2rem;
-  border-radius: 5px 5px 0 0;
-  padding: 5px 15px 15px 15px;
-  background-color: var(--main-lb-color);
-} */
 
 .douleur {
   font-family: arial, cursive;

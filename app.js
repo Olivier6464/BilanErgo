@@ -247,3 +247,28 @@ function heure() {
 }
 
 heure();
+
+function date () {
+  var date = new Date()
+  var nday = date.getDate() + 1 < 10 ? '0' + date.getDate() : date.getDate()
+  var month =
+  date.getMonth() + 1 < 10
+  ? '0' + (date.getMonth() + 1)
+  : date.getMonth() + 1
+  var year = date.getFullYear()
+  var laDate = nday + '/' + month + '/' + year
+  document.getElementById('laDate').innerHTML = laDate
+}
+
+date()
+
+document.addEventListener('DOMContentLoaded', function (){
+  var textareas = document.getElementsByTagName("textarea");
+  for(var i = 0; i<textareas.length; i++){
+    textareas[i].onkeyup = function (e){
+      if (e.key == 'Escape') {
+        var rtl = '\n';
+        e.target.value += rtl;
+      }
+    }
+  }});
